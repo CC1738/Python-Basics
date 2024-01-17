@@ -1,0 +1,61 @@
+# Strings Int and Floats (Lecture 1) and Inputs and Definitions(Lecture 2)
+def user_input(prompt, data_type, error="Invalid input, please enter a valid answer."):
+  while True:
+    try:
+      return data_type(input(prompt))
+    except ValueError:
+      print(error)
+
+user_name = user_input("What is your name?", str)
+user_age = user_input("How old are you?", int)
+user_height = user_input("How tall are you in meters?", float)
+
+# Match Statements & Modulo (lecture 4)
+def even_odd(number):
+  match number % 2:
+    case 0:
+      return "Even"
+    case _:
+      return "Odd"
+
+# Libraries (lecture 8)
+import math
+
+age_info = even_odd(user_age)
+fun_fact = f"Fun fact, {user_name}! Your age is {age_info} and the square root of your age is {math.sqrt(user_age)}"
+print(fun_fact)
+
+print("*" * 50)
+print("Let's start the General Knowledge Quiz!")
+print("*" * 50)
+
+# Conditionals (Lecture 3)
+def check_answer(user_answer, correct_answer):
+  return user_answer.lower() == correct_answer.lower()
+
+# Loops (lecture 5)
+def quiz():
+  for question, correct_answer in quiz_questions.items():
+      user_answer = user_input(f"\n{question}: ", str)
+      if check_answer(user_answer, correct_answer):
+         print("Correct!")
+      else:
+         print(f"Wrong, the correct answer is {correct_answer}")
+
+# Lists and Dictionaries (lecture 6)
+quiz_questions = {
+  "What is the capital of Moldova?": "Chisinau",
+  "When did the second Warld War end?": "1945",
+  "What is the most spoken language in the world? (including non-native)": "English",
+  "Who was the first person to ever step foot on the moon?": "Neil Armstrong",
+  "How many bones does the adult human have?": "206",
+  "What is the best-selling stout beer in the world?": "Guinness"}
+
+# Error Handling (lecture 7)
+def age_height_error(age, height):
+  if age <= 0:
+    raise ValueError("Age can not be less or equal to zero.")
+  if height <= 0:
+    raise ValueError("Height can not be less or equal to zero.")
+
+quiz()
