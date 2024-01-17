@@ -2,7 +2,7 @@
 
 This Python script is an interactive general knowledge quiz, showcasing various programming concepts learned in different lectures. Users input personal details, answer questions and receive feedback.
 
-Key Features
+Key Features:
 
 User Input and Data Types:
 The script uses a custom user_input function to collect user information (name, age, height) with type validation.
